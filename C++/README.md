@@ -41,3 +41,6 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   
 - [copy constructor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/copy_constructor.cpp)
   - Code shows the main function will automatically assign memeory space for primitie type pointers. But the Class can't. It means you need to allocate the memeory space for the pointers before assigning value on it in class methods. Otherwise it will trigger segment fault. 
+
+- [Friend function](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/friend_function.cpp)
+  - you can use one friend function to access many different class private values. This is a way to make code concise. However it is bad on Data Encapsulation. Basically, The ideal is to keep as many of the details of each class hidden from all other classes as possible. So be careful when use fridend function.
