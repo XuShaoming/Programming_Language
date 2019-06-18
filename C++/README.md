@@ -50,7 +50,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - But C++ doesn't hold a root class. So it makes a big forest. detail comes from [geeksforgeess](https://www.geeksforgeeks.org/comparison-of-inheritance-in-c-and-java)
   
 - [Polymorphism](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/polymorphism.cpp)
-  - virtual function support dynamic binding. This is very convenient.
+  - virtual function supports late binding. This is very convenient.
   ```c++
   // virtual int area() {
       //    cout << "Parent class area :" <<endl;
