@@ -71,4 +71,6 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
      return box;
   }
   ```
+- [Static members](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/static_member.cpp)
+  - Static functions only can access static values. Static members are shared by all objects of that class.
   
