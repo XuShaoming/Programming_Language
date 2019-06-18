@@ -2,7 +2,7 @@
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm)
 .Here I write my thoughts about specific language feature about C++.
 
-- [C++ Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
+- [Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
   - In swap case we can see the function that takes reference as parameters is simple than that takes the pointers. 
   ```C++
   void swap(int& x, int& y) {
@@ -21,7 +21,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
      return;
   }
   ```
-- [C++ constructor and destructor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/constructor_destructor.cpp)
+- [constructor and destructor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/constructor_destructor.cpp)
   - If you have only one constructor, and you want it all arguments accept default value. Then it must be defined inside Class.
   ```C++
   Line::Line(double len=10){}
@@ -36,4 +36,8 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   Line::Line(double len): length(len){
    cout << "Object is being created, length = " << len<< endl;
   }
+  // length(len). The length is the name of a class variable
   ```
+  
+- [copy constructor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/copy_constructor.cpp)
+  - Code shows the main function will automatically assign memeory space for primitie type pointers. But the Class can't. It means you need to allocate the memeory space for the pointers before assigning value on it in class methods. Otherwise it will trigger segment fault. 
