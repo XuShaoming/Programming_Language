@@ -61,7 +61,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   virtual int area() = 0;
   ```
 - [Operators overloading](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/operators_overloading.cpp)
-  - operators overloading is a very useful language features especially when you need to define  different operation likes + - < > for classes.
+  - operators overloading is a very useful language feature especially when you need to define  different operations like + - < > for classes.
   ```c++
   Box operator+(const Box& b) {
      Box box;
