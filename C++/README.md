@@ -44,3 +44,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
 
 - [Friend function](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/friend_function.cpp)
   - you can use one friend function to access many different class private values. This is a way to make code concise. However it is bad on Data Encapsulation. Basically, The ideal is to keep as many of the details of each class hidden from all other classes as possible. So be careful when using fridend function.
+  
+- [Multiple_Inheritance](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/oop/multiple_inheritance.cpp)
+  - Java dosen't support multiple inheritance. Java class only supports to be child from single parent, but support implement multiple interfaces. And all Java class are rooted from object class which forms a big trees.
+  - But C++ doesn't hold a root class. So it makes a big forest. detail comes from [geeksforgeess](https://www.geeksforgeeks.org/comparison-of-inheritance-in-c-and-java)
