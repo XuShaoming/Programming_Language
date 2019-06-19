@@ -37,11 +37,11 @@ namespace ns2
 // Defining methods of namespace 
 void ns2::geek::display() 
 { 
-    cout << "ns::geek::display()\n"; 
+    cout << "ns2::geek::display()\n"; 
 } 
 void ns2::display() 
 { 
-    cout << "ns::display()\n"; 
+    cout << "ns2::display()\n"; 
 } 
 
 namespace ns3 
@@ -56,7 +56,7 @@ class ns3::geek
 public: 
     void display() 
     { 
-        cout << "ns::geek::display()\n"; 
+        cout << "ns3::geek::display()\n"; 
     } 
 };
 
