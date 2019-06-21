@@ -109,6 +109,14 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```c++
   signal(SIGINT, signalHandler);  
   ```
-  - You also can raise a signal from your program.[see](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/signal_raise.cpp)
+  - You also can raise a signal from your program.see [here](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/signal_raise.cpp)..
+  ```c++
+  raise( SIGINT);
+  ```
+- [POXIS](https://github.com/XuShaoming/Programming_Language/tree/master/C%2B%2B/POSIX)
+  - One interesing part is to see how C++ takes function as the parameter and how it to provide data to thread. See it [here](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/POSIX/passing_argument.cpp)
+  
+- [IO read and write](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/io/read_write.cpp)
+-Commit 5 finished
   
   
