@@ -91,6 +91,19 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```
 - Preprocessor
   - Give instructions to the compiler to preprocess the information before actual compilation starts. It can be used to write macro. macro will be replaced by replacement-text before the program is compiled. You can check it use gcc -E test.cpp > test.p 
-  - [The # and ## Operators](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/preprocessor_sharpSign.cpp) The # operator causes a replacement-text token to be converted to a string surrounded by quotes. The ## operator is used to concatenate two tokens. 
+  - [The # and ## Operators](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/preprocessor_sharpSign.cpp) The # operator causes a replacement-text token to be converted to a string surrounded by quotes. The ## operator is used to concatenate two tokens.
+  
+- [Signal Function](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/signal_function.cpp)\
+  - Using Conditional Compilation is a good way to make c and c++ code works on cross platforms.
+  - We can use signal function to handle the signal from operating system. This is pretty useful.
+  ```c++
+  void signalHandler( int signum ) {
+   cout << "Interrupt signal (" << signum << ") received.\n";
+
+   // cleanup and close up stuff here  
+   // terminate program  
+
+   exit(signum);  
+  ```
   
   
