@@ -75,4 +75,9 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - Static functions only can access static values. Static members are shared by all objects of that class.
 - [const](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/const.cpp)
   - A function becomes const when const keyword is used in function’s declaration. The idea of const functions is not allow them to modify the object on which they are called. It is recommended practice to make as many functions const as possible so that accidental changes to objects are avoided.--[GeeksfoGeeks](https://www.geeksforgeeks.org/const-member-functions-c/)
+  ```c++
+  // We get compiler error if we add a line like "value = 100;" 
+  // in this function. 
+  int getValue() const {return value;}   
+  ```
   
