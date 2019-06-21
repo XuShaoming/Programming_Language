@@ -80,4 +80,13 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   // in this function. 
   int getValue() const {return value;}   
   ```
+- [Define new Exception](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/define_new_exception.cpp)
+  - what() is a public method provided by exception class and it has been overridden by all the child exception classes. This returns the cause of an exception.
+  ```c++ 
+  struct MyException : public exception {
+   const char * what () const throw () {
+      return "C++ Exception";
+   }
+  };
+  ```
   
