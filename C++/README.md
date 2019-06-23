@@ -118,7 +118,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   
 - [IO read and write](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/io/read_write.cpp)
 - [Type Inference in C++ (auto and decltype)](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/auto_decltype.cpp)
-  - C++ Type Inference happens in compilation time. It uses auto keyword. 
+  - C++ Type Inference happens in compilation time. It uses auto and decltype keyword. 
   ```c++
   auto x = 4; 
   cout << typeid(x).name() << endl //this shows the type name. Hear is i means integer.
@@ -136,5 +136,14 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
 
   } 
   ```
-  
+- Template
+  - Templates are expanded at compiler time. This is like macros. The difference is, compiler does type checking before template expansion. C++ adds two new keywords to support templates: ‘template’ and ‘typename’. The second keyword can always be replaced by keyword ‘class’.
+  - The way to get C type array size uses code likes:
+  ```c++
+  int n = sizeof(a) / sizeof(a[0]);
+  ```
+  - [Function template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_function.cpp)We write a generic function that can be used for different data types.
+  - [Class template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_array_class.cpp) class templates are useful when a class defines something that is independent of data type
+  - We can multiple and default arguments for template. [Example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_multiple_default_arguments.cpp)
+  - [Template Specialization](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_specialization.cpp) make C++ to get a special behavior for a particular data type. In the same time, allow C++ use template to handle the general data types.
   
