@@ -2,6 +2,7 @@
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm)
 (STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my thoughts about specific language feature about C++.
 
+- Some C++11 features require add ```g++ -std=c++11 algorithms_array.cpp``` to be accepted by compiler.
 - [Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
   - In swap case we can see the function that takes reference as parameters is simple than that takes the pointers. 
   ```C++
@@ -142,10 +143,10 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```c++
   int n = sizeof(a) / sizeof(a[0]);
   ```
-  - [Function template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_function.cpp)We write a generic function that can be used for different data types.
-  - [Class template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_array_class.cpp) class templates are useful when a class defines something that is independent of data type
+  - [Function template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_function.cpp).We write a generic function that can be used for different data types.
+  - [Class template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_array_class.cpp). class templates are useful when a class defines something that is independent of data type
   - We can multiple and default arguments for template. [Example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_multiple_default_arguments.cpp)
-  - [Template Specialization](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_specialization.cpp) makes C++ to get a special behavior for a particular data type. In the same time, allow C++ use template to handle the general data types.
+  - [Template Specialization](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_specialization.cpp). makes C++ to get a special behavior for a particular data type. In the same time, allow C++ use template to handle the general data types.
   ```c++
   // A generic sort function  
   template <class T> 
@@ -163,4 +164,23 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   } 
   ```
   - [Template and static variable](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_static_variabels.cpp). Each instantiation of class template has its own copy of member static variables.
+- [Anonymous Function](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/algorithms_array.cpp). C++ lambda function is introduced by C++11. Add ```c++ -std=c++11``` when to comiple. 
+  - It is interesting to see some manipulations on array need to use anonymous functions.
+  ```c++
+  int ar[6] =  {1, 2, 3, 4, 5, -6}; 
+  // Checking if all elements are positive
+  all_of(ar, ar+6, [](int x) { return x>0; })? 
+          cout << "All are positive elements" : 
+          cout << "All are not positive elements"; 
+          
+  // Checking if any element is negative 
+    any_of(ar, ar+6, [](int x){ return x<0; })? 
+          cout << "There exists a negative element" : 
+          cout << "All are positive elements"; 
+  // Checking if no element is negative 
+    none_of(ar, ar+6, [](int x){ return x<0; })? 
+          cout << "No negative elements" : 
+          cout << "There are negative elements"; 
+  ```
+  - copy_n() is deep copy of an array. ```c++ copy_n(ar, 6, ar1); ```
   
