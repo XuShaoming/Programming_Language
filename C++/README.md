@@ -162,4 +162,5 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
       // code to implement counting sort 
   } 
   ```
+  - [Template and static variable](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_static_variabels.cpp). Each instantiation of class template has its own copy of member static variables.
   
