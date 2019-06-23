@@ -145,5 +145,21 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - [Function template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_function.cpp)We write a generic function that can be used for different data types.
   - [Class template](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_array_class.cpp) class templates are useful when a class defines something that is independent of data type
   - We can multiple and default arguments for template. [Example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_multiple_default_arguments.cpp)
-  - [Template Specialization](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_specialization.cpp) make C++ to get a special behavior for a particular data type. In the same time, allow C++ use template to handle the general data types.
+  - [Template Specialization](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/template_specialization.cpp) makes C++ to get a special behavior for a particular data type. In the same time, allow C++ use template to handle the general data types.
+  ```c++
+  // A generic sort function  
+  template <class T> 
+  void sort(T arr[], int size) 
+  { 
+      // code to implement Quick Sort 
+  } 
+
+  // Template Specialization: A function  
+  // specialized for char data type 
+  template <> 
+  void sort<char>(char arr[], int size) 
+  { 
+      // code to implement counting sort 
+  } 
+  ```
   
