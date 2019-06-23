@@ -183,4 +183,5 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
           cout << "There are negative elements"; 
   ```
   - copy_n() is deep copy of an array. ```c++ copy_n(ar, 6, ar1); ```
+- [std::partition](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/algorithms_partition.cpp) is a good way to partition an array by given rule. And stable_partition(beg, end, condition) keep result obey the origin order. This is good. 
   
