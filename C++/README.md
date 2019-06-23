@@ -117,6 +117,24 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - One interesing part is to see how C++ takes function as the parameter and how it to provide data to thread. See it [here](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/POSIX/passing_argument.cpp)
   
 - [IO read and write](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/io/read_write.cpp)
--Commit 5 finished
+- [Type Inference in C++ (auto and decltype)](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/auto_decltype.cpp)
+  - C++ Type Inference happens in compilation time. It uses auto keyword. 
+  ```c++
+  auto x = 4; 
+  cout << typeid(x).name() << endl //this shows the type name. Hear is i means integer.
+  decltype(fun2()) y; // this makes the type of y same as the type of fun2() //char fun2() { return 'g'; } 
+  ```
+  - Type inference is useful when to write templates. See this [example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp), showSet() template function which use auto to meet make the function even general.
+  ```c++
+  template <class T> 
+  void showset(T s) {
+
+    for(auto itr = s.begin(); itr != s.end(); ++itr){
+        cout << '\t' << *itr;
+    }
+    cout << endl;
+
+  } 
+  ```
   
   
