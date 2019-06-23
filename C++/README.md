@@ -2,7 +2,7 @@
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm)
 (STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my thoughts about specific language feature about C++.
 
-- Some C++11 features require add ```g++ -std=c++11 algorithms_array.cpp``` to be accepted by compiler.
+- Some C++11 features require add ```-std=c++11``` to be accepted by compiler.
 - [Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
   - In swap case we can see the function that takes reference as parameters is simple than that takes the pointers. 
   ```C++
