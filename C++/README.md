@@ -188,6 +188,13 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. 
 - [Vector](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_vector.cpp)
   - resize() will truncate the vector. use shrink_to_fit() if you want to save space.
-  - emplace() and emplace_back() introduced by C++11. need:  g++ -std=c++11 -stdlib=libc++
+  - emplace() and emplace_back() introduced by C++11. need:  ``` g++ -std=c++11 -stdlib=libc++ ```
   - Vector likes Java ArrayList.
+  - Inserting and erasing at the beginning or in the middle is linear in time[2](https://www.geeksforgeeks.org/vector-in-cpp-stl/)
+- [List](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_list.cpp)
+  - It is doubly linked list.
+- [Deque](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_deque.cpp).
+  - Double Ended Queues is a special kind of queue which allows push and pop form both front and end. The normal queue allows insertion only at the end and deletion from the front. such as Java Queue. But Java Queue is an interface, usually we use Java LinkedList to make Java Quene.
+  
+
   
