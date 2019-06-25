@@ -194,7 +194,15 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
 - [List](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_list.cpp)
   - It is doubly linked list.
 - [Deque](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_deque.cpp).
-  - Double Ended Queues is a special kind of queue which allows push and pop form both front and end. The normal queue allows insertion only at the end and deletion from the front. such as Java Queue. But Java Queue is an interface, usually we use Java LinkedList to make Java Quene.
+  - Double Ended Queues is a special kind of queue which allows push and pop from both front and end. The normal queue allows insertion only at the end and deletion from the front. such as Java Queue. But Java Queue is an interface, usually we use Java LinkedList to make Java Quene.
+- [Array Class](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_array.cpp).
+  - Is prefered over the C style array.
+  - C++ does not initialize the array class with default value.
+- [Forward List](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_forward_list.cpp)
+  - It is Singly linked list. Introduced by C++11.
+  - remove_():- This function removes according to the condition in its argument.
+  ```c++ flist.remove_if([](int x){ return x>20;});  ```
+  - splice_after() :- This function transfers elements from A forward list to B. A points to null. 
   
 
   
