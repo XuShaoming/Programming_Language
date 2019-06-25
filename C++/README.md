@@ -184,7 +184,10 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```
   - copy_n() is deep copy of an array. ```c++ copy_n(ar, 6, ar1); ```
 - [std::partition](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/algorithms_partition.cpp) is a good way to partition an array by given rule. And stable_partition(beg, end, condition) keep result obey the origin order. This is good. 
-- Commit 6 finished.
 - [Set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp)
   - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. 
+- [Vector](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_vector.cpp)
+  - resize() will truncate the vector. use shrink_to_fit() if you want to save space.
+  - emplace() and emplace_back() introduced by C++11. need:  g++ -std=c++11 -stdlib=libc++
+  - Vector likes Java ArrayList.
   
