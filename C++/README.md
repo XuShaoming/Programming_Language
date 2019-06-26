@@ -240,6 +240,15 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   } 
   ```
 - [Multimap](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_multimap.cpp) is similar to map with an addition that multiple elements can have same keys.
+- [unordered set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_set.cpp).
+  - unordered_set is implemented using hash table where keys are hashed into indices of this hash table so it is not possible to maintain an order. This likes the Java HashSet.
+  - Time complexity of set operations is O(Log n) while for unordered_set, it is O(1).
+  - The iterator works as pointer to key values so we can get key by dereferencing them by *.
+  ```c++
+  // iterator itr loops from begin() till end() 
+    for (itr = duplicate.begin(); itr != duplicate.end(); itr++) 
+        cout << *itr << " "; 
+  ```
 
 
   
