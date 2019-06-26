@@ -205,7 +205,9 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - splice_after() :- This function transfers elements from A forward list to B. A points to null. 
 - [Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_queue.cpp)
   - Queue is a adaptor container. Prefered over deque if you just want a ordinary queue.
-  - Code below will not affect original queue. It shows the function operated on copied queue. You need to use & or * to operate the original queue. This is different from Java. 
+- [Priority Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_priority_queue.cpp)
+  - the first element of the queue is the greatest of all elements in the queue and elements are in non decreasing order.
+  - Code below will not affect original queue. It shows the function operated on copied queue. You need to use & or * to operate the original queue. This is different from Java[[example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/ContainPriorityQueue.java)]. 
   ```c++
   void showq(queue <int> gq) 
   {   
