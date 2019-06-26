@@ -289,6 +289,12 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   // insertion by initializer list 
   umm2.insert({{"alpha", 12}, {"beta", 33}}); 
   ```
+- [Functor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/function_functors.cpp)
+- [Iterators](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/iterators.cpp)
+  - There are five types of iterators.[see](https://www.geeksforgeeks.org/input-iterators-in-cpp/)
+- [Pair](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/utility_pair.cpp)
+  - The pair is mutable.
+  
     
 
   
