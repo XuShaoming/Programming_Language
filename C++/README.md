@@ -1,6 +1,6 @@
 # C++
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm)
-(STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my thoughts about specific language feature about C++.
+(STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my notes about specific language feature about C++. Some of my notes from the references mentioned above.
 
 - Some C++11 features require add ```-std=c++11``` to be accepted by compiler.
 - [Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
@@ -202,7 +202,6 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - remove_():- This function removes according to the condition in its argument.
   ```c++ flist.remove_if([](int x){ return x>20;});  ```
   - splice_after() :- This function transfers elements from A forward list to B. A points to null.
-- [containers adaptors]
 - [Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_queue.cpp)
   - Queue is a adaptor container. Prefered over deque if you just want a ordinary queue.
 - [Priority Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_priority_queue.cpp)
@@ -240,5 +239,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
     cout << endl;
   } 
   ```
+- [Multimap](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_multimap.cpp) is similar to map with an addition that multiple elements can have same keys.
+
 
   
