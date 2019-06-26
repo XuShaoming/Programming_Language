@@ -252,7 +252,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
 - [unordered_multiset](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_multiset.cpp)
   - You can initialize unoroder_multiset uses {}. This is supported by C++11.
   - We can delete only one copy of some value by using find function and iterator version of erase.
-- [unordered_map]
+- [unordered_map](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_map.cpp)
   - Internally unordered_map is implemented using Hash Table. Likes Java HashMap.
   - Time complexity of map operations is O(Log n) while for unordered_set, it is O(1) on average.
   - It is useful to use stringstream to breaking works. 
@@ -277,5 +277,18 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
         cout << "(" << p->first << ", " << p->second << ")\n"; 
   } 
   ```
+- [unordered_multimap](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_multimap.cpp)
+  - The internal implementation of unordered_multimap is same as that of unordered_map but for duplicate keys another count value is maintained with each key-value pair.
+  - This assignment make a new copy.
+  ```c++
+    // Initialization by assignment operation 
+    umm1 = umm2;
+  ```
+  - It can insert multiple pairs in the same time.
+  ```c++
+  // insertion by initializer list 
+  umm2.insert({{"alpha", 12}, {"beta", 33}}); 
+  ```
+    
 
   
