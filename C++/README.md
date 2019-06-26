@@ -184,8 +184,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```
   - copy_n() is deep copy of an array. ```c++ copy_n(ar, 6, ar1); ```
 - [std::partition](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/algorithms_partition.cpp) is a good way to partition an array by given rule. And stable_partition(beg, end, condition) keep result obey the origin order. This is good. 
-- [Set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp)
-  - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. 
+- [Container and Adaptor Container Summary](http://www.cplusplus.com/reference/stl/)
 - [Vector](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_vector.cpp)
   - resize() will truncate the vector. use shrink_to_fit() if you want to save space.
   - emplace() and emplace_back() introduced by C++11. need:  ``` g++ -std=c++11 -stdlib=libc++ ```
@@ -202,7 +201,8 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - It is Singly linked list. Introduced by C++11.
   - remove_():- This function removes according to the condition in its argument.
   ```c++ flist.remove_if([](int x){ return x>20;});  ```
-  - splice_after() :- This function transfers elements from A forward list to B. A points to null. 
+  - splice_after() :- This function transfers elements from A forward list to B. A points to null.
+- [containers adaptors]
 - [Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_queue.cpp)
   - Queue is a adaptor container. Prefered over deque if you just want a ordinary queue.
 - [Priority Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_priority_queue.cpp)
@@ -219,6 +219,26 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
     cout << '\n'; 
   }
   ```
-  
+- [Stack](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_stack.cpp) support last in first out.
+- [Set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp)
+  - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. So Set keeps increasing order by its keys. But if you want non increasing order. You can write code likes this: 
+  ```c++ set <int, greater <int> > gquiz1; ```
+- [Multiset](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_multiset.cpp)
+  - Multiset are a type of associative containers similar to set, with an exception that multiple elements can have same values.
+  - It also implemented as binary search trees.
+- [Map](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_map.cpp)
+  - C++ Maps are typically implemented as binary search trees. See the result, they are ordered by keys on non decreasing order.
+  - I write a template function to show the elements in map.
+  ```c++
+  template <class T> 
+  void showmap(T s) {
+
+    for(auto itr = s.begin(); itr != s.end(); ++itr){
+        cout << '\t' << itr->first
+             << '\t' << itr->second <<endl;
+    }
+    cout << endl;
+  } 
+  ```
 
   
