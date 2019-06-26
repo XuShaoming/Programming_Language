@@ -249,6 +249,33 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
     for (itr = duplicate.begin(); itr != duplicate.end(); itr++) 
         cout << *itr << " "; 
   ```
-
+- [unordered_multiset](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_multiset.cpp)
+  - You can initialize unoroder_multiset uses {}. This is supported by C++11.
+  - We can delete only one copy of some value by using find function and iterator version of erase.
+- [unordered_map]
+  - Internally unordered_map is implemented using Hash Table. Likes Java HashMap.
+  - Time complexity of map operations is O(Log n) while for unordered_set, it is O(1) on average.
+  - It is useful to use stringstream to breaking works. 
+  - The unordered_map will initialize the int value as zero.
+  ```c++
+  void printFrequencies(const string &str) 
+  { 
+    // declaring map of <string, int> type, each word 
+    // is mapped to its frequency 
+    unordered_map<string, int> wordFreq; 
+  
+    // breaking input into word using string stream 
+    stringstream ss(str);  // Used for breaking words 
+    string word; // To store individual words 
+    while (ss >> word) 
+        wordFreq[word]++; 
+  
+    // now iterating over word, freq pair and printing 
+    // them in <, > format 
+    unordered_map<string, int>:: iterator p; 
+    for (p = wordFreq.begin(); p != wordFreq.end(); p++) 
+        cout << "(" << p->first << ", " << p->second << ")\n"; 
+  } 
+  ```
 
   
