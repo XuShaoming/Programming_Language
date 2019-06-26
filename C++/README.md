@@ -203,6 +203,20 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - remove_():- This function removes according to the condition in its argument.
   ```c++ flist.remove_if([](int x){ return x>20;});  ```
   - splice_after() :- This function transfers elements from A forward list to B. A points to null. 
+- [Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_queue.cpp)
+  - Queue is a adaptor container. Prefered over deque if you just want a ordinary queue.
+  - Code below will not affect original queue. It shows the function operated on copied queue. You need to use & or * to operate the original queue. This is different from Java. 
+  ```c++
+  void showq(queue <int> gq) 
+  {   
+    while (!gq.empty()) 
+    { 
+        cout << ' ' << gq.front(); 
+        gq.pop(); 
+    } 
+    cout << '\n'; 
+  }
+  ```
   
 
   
