@@ -1,6 +1,6 @@
 # C++
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm)
-(STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my thoughts about specific language feature about C++.
+(STL part from [GeeksforGeeks](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)).Here I write my notes about specific language feature about C++. Some of my notes from the references mentioned above.
 
 - Some C++11 features require add ```-std=c++11``` to be accepted by compiler.
 - [Reference](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/play_reference.cpp) :
@@ -184,8 +184,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   ```
   - copy_n() is deep copy of an array. ```c++ copy_n(ar, 6, ar1); ```
 - [std::partition](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/algorithms_partition.cpp) is a good way to partition an array by given rule. And stable_partition(beg, end, condition) keep result obey the origin order. This is good. 
-- [Set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp)
-  - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. 
+- [Container and Adaptor Container Summary](http://www.cplusplus.com/reference/stl/)
 - [Vector](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_vector.cpp)
   - resize() will truncate the vector. use shrink_to_fit() if you want to save space.
   - emplace() and emplace_back() introduced by C++11. need:  ``` g++ -std=c++11 -stdlib=libc++ ```
@@ -202,7 +201,100 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - It is Singly linked list. Introduced by C++11.
   - remove_():- This function removes according to the condition in its argument.
   ```c++ flist.remove_if([](int x){ return x>20;});  ```
-  - splice_after() :- This function transfers elements from A forward list to B. A points to null. 
+  - splice_after() :- This function transfers elements from A forward list to B. A points to null.
+- [Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_queue.cpp)
+  - Queue is a adaptor container. Prefered over deque if you just want a ordinary queue.
+- [Priority Queue](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_priority_queue.cpp)
+  - the first element of the queue is the greatest of all elements in the queue and elements are in non decreasing order.
+  - Code below will not affect original queue. It shows the function operated on copied queue. You need to use & or * to operate the original queue. This is different from Java[[example](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/ContainPriorityQueue.java)]. 
+  ```c++
+  void showq(queue <int> gq) 
+  {   
+    while (!gq.empty()) 
+    { 
+        cout << ' ' << gq.front(); 
+        gq.pop(); 
+    } 
+    cout << '\n'; 
+  }
+  ```
+- [Stack](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_stack.cpp) support last in first out.
+- [Set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_set.cpp)
+  - Sets are typically implemented as binary search trees[[1](http://www.cplusplus.com/reference/set/set/)]. So Set keeps increasing order by its keys. But if you want non increasing order. You can write code likes this: 
+  ```c++ set <int, greater <int> > gquiz1; ```
+- [Multiset](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_multiset.cpp)
+  - Multiset are a type of associative containers similar to set, with an exception that multiple elements can have same values.
+  - It also implemented as binary search trees.
+- [Map](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_map.cpp)
+  - C++ Maps are typically implemented as binary search trees. See the result, they are ordered by keys on non decreasing order.
+  - I write a template function to show the elements in map.
+  ```c++
+  template <class T> 
+  void showmap(T s) {
+
+    for(auto itr = s.begin(); itr != s.end(); ++itr){
+        cout << '\t' << itr->first
+             << '\t' << itr->second <<endl;
+    }
+    cout << endl;
+  } 
+  ```
+- [Multimap](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_multimap.cpp) is similar to map with an addition that multiple elements can have same keys.
+- [unordered set](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_set.cpp).
+  - unordered_set is implemented using hash table where keys are hashed into indices of this hash table so it is not possible to maintain an order. This likes the Java HashSet.
+  - Time complexity of set operations is O(Log n) while for unordered_set, it is O(1).
+  - The iterator works as pointer to key values so we can get key by dereferencing them by *.
+  ```c++
+  // iterator itr loops from begin() till end() 
+    for (itr = duplicate.begin(); itr != duplicate.end(); itr++) 
+        cout << *itr << " "; 
+  ```
+- [unordered_multiset](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_multiset.cpp)
+  - You can initialize unoroder_multiset uses {}. This is supported by C++11.
+  - We can delete only one copy of some value by using find function and iterator version of erase.
+- [unordered_map](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_map.cpp)
+  - Internally unordered_map is implemented using Hash Table. Likes Java HashMap.
+  - Time complexity of map operations is O(Log n) while for unordered_set, it is O(1) on average.
+  - It is useful to use stringstream to breaking works. 
+  - The unordered_map will initialize the int value as zero.
+  ```c++
+  void printFrequencies(const string &str) 
+  { 
+    // declaring map of <string, int> type, each word 
+    // is mapped to its frequency 
+    unordered_map<string, int> wordFreq; 
   
+    // breaking input into word using string stream 
+    stringstream ss(str);  // Used for breaking words 
+    string word; // To store individual words 
+    while (ss >> word) 
+        wordFreq[word]++; 
+  
+    // now iterating over word, freq pair and printing 
+    // them in <, > format 
+    unordered_map<string, int>:: iterator p; 
+    for (p = wordFreq.begin(); p != wordFreq.end(); p++) 
+        cout << "(" << p->first << ", " << p->second << ")\n"; 
+  } 
+  ```
+- [unordered_multimap](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/container_unordered_multimap.cpp)
+  - The internal implementation of unordered_multimap is same as that of unordered_map but for duplicate keys another count value is maintained with each key-value pair.
+  - This assignment make a new copy.
+  ```c++
+    // Initialization by assignment operation 
+    umm1 = umm2;
+  ```
+  - It can insert multiple pairs in the same time.
+  ```c++
+  // insertion by initializer list 
+  umm2.insert({{"alpha", 12}, {"beta", 33}}); 
+  ```
+- [Functor](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/function_functors.cpp)
+- [Iterators](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/iterators.cpp)
+  - There are five types of iterators.[see](https://www.geeksforgeeks.org/input-iterators-in-cpp/)
+- [Pair](https://github.com/XuShaoming/Programming_Language/blob/master/C%2B%2B/STL/utility_pair.cpp)
+  - The pair is mutable.
+  
+    
 
   
