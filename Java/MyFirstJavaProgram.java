@@ -8,3 +8,8 @@ public class MyFirstJavaProgram {
       System.out.println("Hello World"); // prints Hello World
    }
 }
+
+/**
+xu-Macbook:Java xushaoming$ java MyFirstJavaProgram
+Hello World
+*/
