@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/synchronized-in-java/
+
 // A Java program to demonstrate working of 
 // synchronized. 
 
