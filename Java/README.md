@@ -1,7 +1,28 @@
 # Java
 This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm) and [geeksforgeeks](https://www.geeksforgeeks.org/). Notes includes my thoughts and the good comments from the cited websites.
 
+### Basic
+- variable
+  - Variables are nothing but reserved memory locations to store values.
+  ```java
+  //byte is type
+  //a is variables
+  //68 is Literal
+  byte a = 68;
+  ```
+- Package
+  - Detail see **\<Thinking in Java Access\>** Chapter Access Control. See [examples](Basic/Package).
+  - On Mac:
+    - Set CLASSPATH in .bash_profile
+    - source .bash_profile
+
+
 ### Object and Classes
+- Constructors
+  -  Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.
+- Class/Static Variables.
+  - Only one copy of each class variable per class
+  - Can be used with final to set variable as constant. [Example](Basic/Employee.java)
 - [How to Use Singleton Class](https://www.tutorialspoint.com/java/java_using_singleton.htm)
   - The Singleton's purpose is to control object creation, limiting the number of objects to only one. Singletons often control access to resources, such as database connections or sockets. [Code](ObjectAndClass/SingletonDemo.java)
 
