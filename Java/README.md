@@ -1,5 +1,5 @@
 # Java
-This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm) and [geeksforgeeks](https://www.geeksforgeeks.org/). Notes includes my thoughts and the good comments from the cited websites.
+This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm),  [geeksforgeeks](https://www.geeksforgeeks.org/) and [The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/index.html). Notes includes my thoughts and the good comments from the cited websites.
 
 ### Basic
 - **variable**
@@ -209,6 +209,48 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
 
 - [**How to Use Singleton Class**](https://www.tutorialspoint.com/java/java_using_singleton.htm)
   - The Singleton's purpose is to control object creation, limiting the number of objects to only one. Singletons often control access to resources, such as database connections or sockets. [Code](ObjectAndClass/SingletonDemo.java)
+- **Nested Classes**
+    - Inner Classes
+        - Inner classes are a security mechanism in Java. Normal class can not be made private, but the inner class can. Inner classes are of three types
+            1. Inner Class
+            2. Method-local Inner Class
+            3. Anonymous Inner Class
+        - Inner Class
+            - just need to write a class within a class, can be set as private.
+            - Can use the inner class to access the private members of a class. [Examples](ObjectAndClass/InnerClass).
+            ```java
+            //instantiate the inner class
+            Outer_Demo outer = new Outer_Demo();
+            Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+            ```
+        - [Method-local Inner Class](ObjectAndClass/InnerClass/Outerclass.java)
+            - In Java, we can write a class within a method and this will be a local type. Like local variables, the scope of the inner class is restricted within the method.
+        - Anonymous Inner Class
+            - Anonymous Inner Class  s the inner class declared without a class name. We declare and instantiate it at the same time.Generally, they are used whenever you need to override the method of a class or an interface.
+            - [Example](ObjectAndClass/InnerClass/Outer_class.java)
+            ```java
+            AnonymousInner an_inner = new AnonymousInner() {
+                public void my_method() { /*your codes */}   
+            };
+            ```
+            - Anonymous Inner Class as Argument [example](ObjectAndClass/InnerClass/AnonymousInnerClassArgument.java)
+            ```java
+            obj.my_Method(new My_Class() {
+                public void Do() {}
+            });
+            ```
+
+    - [Static Nested Class](ObjectAndClass/InnerClass/Outer.java)
+        - Static Nested Class can be accessed without instantiating the outer class, using other static members. Can't access to the instance variables and methods of the outer class
+        ```java
+        class MyOuter {
+           static class Nested_Demo {
+           }
+        }
+        ```
+    - hierarchy of Nested Classes
+    ![hierarchy of Nested Classes](images/inner_classes.jpg "hierarchy of Nested Classes")
+
 
 ### Exceptions
 - **Checked Exceptions**: exceptions that are checked by the compiler at compilation-time, these are also called as compile time exceptions.
@@ -267,6 +309,25 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
        }
        // Remainder of class definition
     }
+    ```
+- [**The try-with-resources**](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+    - try-with-resources, also referred as automatic resource management, helps to automatically close the resources used within the try catch block.
+    - [Example](Exceptions/ReadData_Demo.java) that not uses try-with. More complicated. Error prone.
+    - [Example](Try_withDemo/ReadData_Demo.java) that uses try-with. More concise and easy to write.
+    ```java
+    try(FileReader fr = new FileReader("file path")) {
+    // use the resource
+    } catch () {
+      // body of catch
+    }
+    ```
+- **User-defined Exceptions**
+    - All exceptions must be a child of Throwable.
+    - If you want to write a checked exception, you need to extend the **Exception** class.
+    - If you want to write a runtime exception, you need to extend the RuntimeException class.
+    - [Examples](Exceptions/UserDefinedException)
+    ```java
+    class MyException extends Exception { }
     ```
 
 
