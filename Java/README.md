@@ -74,19 +74,23 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
        return result;
   }
   ```
+
 - Measuring Elapsed Time
- - [Example](Basic/MeasuringElapsedTime.java)
-  ```java
-  long start = System.currentTimeMillis( );
-  //Your tasks
-  long end = System.currentTimeMillis( );
-  long diff = end - start;
-  System.out.println("Difference is : " + diff);
-  ```
+    - [Example](Basic/MeasuringElapsedTime.java)
+      ```java
+      long start = System.currentTimeMillis( );
+      //Your tasks
+      long end = System.currentTimeMillis( );
+      long diff = end - start;
+      System.out.println("Difference is : " + diff);
+      ```
+
 - Method Overloading
   - When a class has two or more methods by the same name but different parameters, it is known as method overloading. It is different from overriding. In overriding, a method has the same method name, type, number of parameters, etc. [Example](Basic/ExampleOverloading.java)
+
 - Using Command-Line Arguments
- - A command-line argument is the information that directly follows the program's name on the command line when it is executed.[Example](Basic/CommandLine.java)
+    - A command-line argument is the information that directly follows the program's name on the command line when it is executed.[Example](Basic/CommandLine.java)
+
 - The this keyword
   - **this** is a keyword in Java which is used as a reference to the object of the current class, with in an instance method or a constructor.
   - explicit constructor invocation
@@ -137,6 +141,7 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
   - On Mac:
     - Set CLASSPATH in .bash_profile
     - source .bash_profile
+
 - Class/Static Variables.
   - Only one copy of each class variable per class
   - Can be used with final to set variable as constant. [Example](AccessControl/Employee.java)
@@ -149,9 +154,42 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
     - Methods declared protected in a superclass must either be protected or public in subclasses; they cannot be private.=
     - Methods declared private are not inherited at all, so there is no rule for them.
 
+### Files and I/O
+- Stream [Examples](IO/CopyFile.java)
+    - Byte Streams
+        - Java byte streams are used to perform input and output of 8-bit bytes. the most frequently used classes are, **FileInputStream** and **FileOutputStream**.
+    - Character Streams
+        - Java Character streams are used to perform input and output for 16-bit unicode. Most frequently used classes are, **FileReader** and **FileWriter**.
+    - Standard Streams. [Example](IO/ReadConsole.java)
+        - support for standard I/O where the user's program can take input from a keyboard and then produce an output on the computer screen. Three standard streams:
+            - **Standard Input**: System.in
+            - **Standard Output**: System.out
+            - **Standard Error**: System.err
+- hierarchy
+    - a hierarchy of classes to deal with Input and Output streams.
+    ![hierarchy of IO class](images/file_io.png "hierarchy of IO class")
+- [File Class](https://www.tutorialspoint.com/java/java_file_class.htm). [Example](IO/FileDemo.java)
+    - This class is used for creation of files and directories, file searching, file deletion, etc. The File object represents the actual file/directory on the disk
+- Directories
+    - A directory is a File which can contain a list of other files and directories. You use File object to manipulate directories.
+    ```java
+    // Create directory.
+    String dirname = "temp/temp2";
+    File d = new File(dirname);
+    d.mkdirs();
+
+    //Listing Directories
+    file = new File("/tmp");
+    paths = file.list();
+    for(String path:paths){
+        System.out.println(path);
+    }
+    ```
+
+
 ### Object and Classes
 - Constructors
-  -  Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.
+  - Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.
 - Abstract Class
   - An abstract class can never be instantiated. It cannot be both abstract and final (since a final class cannot be extended).
   - An abstract class may contain both abstract methods as well normal methods.
