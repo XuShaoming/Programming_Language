@@ -251,6 +251,81 @@ This repository includes the examples from the [C++ Quick Guide](https://www.tut
     - hierarchy of Nested Classes
     ![hierarchy of Nested Classes](images/inner_classes.jpg "hierarchy of Nested Classes")
 
+### Inheritance
+- **extends Keyword**
+    - used to inherit the properties of a class.
+    - Syntax
+    ```java
+    class Super {}
+    class Sub extends Super {}
+    ```
+    - Structure of [Sample code](OOP/My_Calculation.java).
+    ![inheritance](images/inheritance.jpg "inheritance example")
+- [**The super keyword**](OOP/Sub_class.java)
+    - It is used to differentiate the members of superclass from the members of subclass, if they have same names.
+    - It is used to invoke the superclass constructor from subclass. Constructors are not members, so they are not inherited by subclasses
+- [**Invoking Superclass Constructor**](OOP/Subclass.java)
+    - The subclass automatically acquires the default constructor of the superclass.
+    - But you need to use the super keyword to call a parameterized constructor of the superclass.
+    ```java
+    super(values);
+    ```
+- **IS-A Relationship**
+    - Subclass is a Superclass
+    - the **implements** keyword is used with classes to inherit the properties of an interface. Interfaces can never be extended by a class.
+    ```Java
+    public interface Animal {}
+    public class Mammal implements Animal {}
+    public class Dog extends Mammal {}
+    ```
+    - Use the **instanceof** operator to check IS-A Relationship. [Sample](OOP/Dog.java).
+- **HAS-A relationship**
+    - This determines whether a certain class HAS-A certain thing. This relationship helps to reduce duplication of code as well as bugs.
+    ```java
+    //This shows that class Van HAS-A Speed
+    public class Vehicle{}
+    public class Speed{}
+    public class Van extends Vehicle {
+       private Speed sp;
+    }
+    ```
+- Types of Inheritance
+    - Java does not support multiple inheritance but can implement one or more interfaces. C++ support  multiple inheritance.
+![Types of Inheritance](images/types_of_inheritance.png "Types of Inheritance")
+
+### Overriding
+- Overriding means to override the functionality of an existing method. It helps Subclass to override the method that is not marked final.
+- super keyword is used to invoke the superclass' overridden method. [Sample code](OOP/TestDog.java).
+
+### Polymorphism
+- The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+```java
+public interface Vegetarian{}
+public class Animal{}
+public class Deer extends Animal implements Vegetarian{}
+// All the reference variables d, a, v, o refer to the same Deer object in the heap
+Deer d = new Deer();
+Animal a = d;
+Vegetarian v = d;
+Object o = d;
+```
+- **virtual method invocation**
+    - In compile time, the check is made on the reference type. However, in the runtime, JVM figures out the object type and would run the method that belongs to that particular object. [Sample code](OOP/TestDog.java)
+
+### Abstraction
+- Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user.
+-  If inheriting an abstract class, Subclass must provide implementations to all the abstract methods. [Sample code](OOP/AbstractDemo)
+
+### Encapsulation
+- To achieve encapsulation in Java
+    1. Declare the variables of a class as private.
+    2. Provide public setter and getter methods to modify and view the variables values.
+- Benefits
+    1. The fields of a class can be made read-only or write-only.
+    2. A class can have total control over what is stored in its fields
+- [Sample code](OOP/RunEncap.java)
+
+
 
 ### Exceptions
 - **Checked Exceptions**: exceptions that are checked by the compiler at compilation-time, these are also called as compile time exceptions.
