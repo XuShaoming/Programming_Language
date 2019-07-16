@@ -1,5 +1,5 @@
 # Java
-This repository includes the examples from the [C++ Quick Guide](https://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm),  [geeksforgeeks](https://www.geeksforgeeks.org/) and [The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/index.html). Notes includes my thoughts and the good comments from the cited websites.
+This repository includes the examples from the [Java Quick Guide](https://www.tutorialspoint.com/java/java_quick_guide),  [geeksforgeeks](https://www.geeksforgeeks.org/) and [The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/index.html). Notes includes my thoughts and the good comments from the cited websites.
 
 ### Basic
 - **variable**
@@ -348,7 +348,9 @@ Object o = d;
 
 - **Exception Hierarchy**
     - [Built-in Exceptions](https://www.tutorialspoint.com/java/java_builtin_exceptions.htm)
-    ![hierarchy of Exceptions](images/exceptions1.jpg "hierarchy of Exceptions")
+    <p align="center">
+        <img src="images/exceptions1.jpg" alt="hierarchy of Exceptions">
+    </p>
 
 - **Catching Exceptions**
     - Code within a try/catch block is referred to as protected code
