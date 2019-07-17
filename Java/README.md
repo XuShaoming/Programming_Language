@@ -145,7 +145,16 @@ This repository includes the examples from the [Java Quick Guide](https://www.tu
 
 ### Access control
 - **Package**
-  - Detail see **\<Thinking in Java Access\>** Chapter Access Control. See [examples](AccessControl/Package).
+  - Detail see **\<Thinking in Java Access\>** Chapter Access Control. See [examples](AccessControl/Package) and [Java Quick Guide](https://www.tutorialspoint.com/java/java_quick_guide).
+  - It is a good practice to group related classes. In general, a group uses reversed Internet domain name for its package names.
+  - a folder with the given package name is created in the specified destination, and the compiled class files will be placed in that folder. [Sample Code](AccessControl/codes)
+  ```
+  # compile to given folder (absolute path)
+  javac -d Destination_folder file_name.java
+  # Run programs
+  java PackageName.ClassName
+  ```
+
   - On Mac:
     - Set CLASSPATH in .bash_profile
     - source .bash_profile
@@ -325,7 +334,23 @@ Object o = d;
     2. A class can have total control over what is stored in its fields
 - [Sample code](OOP/RunEncap.java)
 
-
+### Interfaces
+- Along with abstract methods, an interface may also contain constants, default methods, static methods, and nested types. Method bodies exist only for default methods and static methods.
+- Except abstract class, all the methods of the interface need to be defined in the class.
+- An interface does not contain any constructors and it can only contain instance fields that are declared both static and final.
+- An interface can extend multiple interfaces. [Sample Code](OOP/ExtendInterfaces.java)
+- The **interface** keyword is used to declare an interface. [Sample code](OOP/MammalInt.java)
+    ```java
+    interface Animal {
+        // Any number of final, static fields
+        // Any number of abstract method declarations\
+        public void eat();
+        public void travel();
+    }
+    ```
+- An interface with no methods in it is referred to as a tagging interface. Two purposes:
+    - Creates a common parent
+    - Adds a data type to a class
 
 ### Exceptions
 - **Checked Exceptions**: exceptions that are checked by the compiler at compilation-time, these are also called as compile time exceptions.
@@ -407,6 +432,9 @@ Object o = d;
     class MyException extends Exception { }
     ```
 
+### Data Structures
+
+
 ### Multithreading
 - [**volatile keyword in Java**](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
   - **Mutual Exclusion**: It means that only one thread or process can execute a block of code (critical section) at a time.
@@ -415,5 +443,3 @@ Object o = d;
 - [**Synchronized in Java**](https://www.geeksforgeeks.org/synchronized-in-java/)
   - All synchronized blocks synchronized on the same object can only have one thread executing inside them at a time. All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block. [Code](Multithreading/SyncDemo.java).
   - This synchronization is implemented in Java with a concept called monitors. I have learned this in OS course. See it [here](https://github.com/XuShaoming/UB_COURSES/blob/master/Operating%20System/Lecture_09__Process_Synchronization__II.pdf).
-
-- $k_{n+1} = n^2 + k_n^2 - k_{n-1}$
