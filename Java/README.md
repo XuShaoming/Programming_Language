@@ -351,6 +351,11 @@ Object o = d;
 - An interface with no methods in it is referred to as a tagging interface. Two purposes:
     - Creates a common parent
     - Adds a data type to a class
+- [**Nested or Inner interfaces**](https://beginnersbook.com/2016/03/nested-or-inner-interfaces-in-java/)
+    - An interface which is declared inside another interface or class is called nested interface. The main purpose of using them is to resolve the namespace by grouping related interfaces
+    - Nested interfaces are static by default.
+    - Nested interfaces declared inside class can take any access modifier, however nested interface declared inside interface is public implicitly.
+    - [Example code](OOP/NestedInterfaceDemo.java)
 
 ### Exceptions
 - **Checked Exceptions**: exceptions that are checked by the compiler at compilation-time, these are also called as compile time exceptions.
@@ -432,8 +437,30 @@ Object o = d;
     class MyException extends Exception { }
     ```
 
-### Data Structures
-
+### Collections Framework
+- The collections framework was designed to meet several **goals**, such as −
+    - The framework had to be high-performance.
+    - The framework had to allow different types of collections to work in a similar manner and with a high degree of interoperability.
+    - The framework had to extend and/or adapt a collection easily.
+- **The Collection Interfaces**
+    - The Collection Interfaces are abstract data types that represent collections. They help to form a hierarchy.
+    - [The Collection Interface](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
+        - The Collection interface is the foundation of collections framework. It declares the core methods that all collections will have.
+    - [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) -- [Sample Code](Collection/ListDemo.java)
+    - [Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html)
+        - A Set is a Collection that cannot contain duplicate elements. It models the mathematical set abstraction. [Sample code](Collection/SetDemo.java)
+    - [SortedSet](https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html)
+        - The SortedSet interface extends Set and declares a set sorted in an ascending order. [Sample Code](Collection/SortedSetTest.java)
+        ```java
+        SortedSet set = new TreeSet();
+        ```
+    - [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html)
+        - The Map interface maps unique keys to values. Map has not parent interface. Both key and value are objects. [Sample Code](Collection/MapDemo.java)
+    - [Map.Entry](https://docs.oracle.com/javase/8/docs/api/java/util/Map.Entry.html)
+        - **Map.Entry** interface is the Enclosing interface of **Map** interface. [Sample code](Collection/HashMapDemo.java)
+    - [SortedMap](https://docs.oracle.com/javase/7/docs/api/java/util/SortedMap.html)
+        - The SortedMap interface extends Map. It ensures that the entries are maintained in an ascending key order.
+        - extends by **TreeMap** [Sample Code](Collection/TreeMapDemo.java)
 
 ### Multithreading
 - [**volatile keyword in Java**](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
