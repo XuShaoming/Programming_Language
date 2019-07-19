@@ -1,3 +1,5 @@
+//https://www.tutorialspoint.com/java/java_hashmap_class.htm
+
 import java.util.*;
 public class HashMapDemo {
 

@@ -438,7 +438,7 @@ Object o = d;
     ```
 
 ### Collections Framework
-- The collections framework was designed to meet several **goals**, such as −
+- The collections framework was designed to meet several **goals**, such as
     - The framework had to be high-performance.
     - The framework had to allow different types of collections to work in a similar manner and with a high degree of interoperability.
     - The framework had to extend and/or adapt a collection easily.
@@ -461,6 +461,60 @@ Object o = d;
     - [SortedMap](https://docs.oracle.com/javase/7/docs/api/java/util/SortedMap.html)
         - The SortedMap interface extends Map. It ensures that the entries are maintained in an ascending key order.
         - extends by **TreeMap** [Sample Code](Collection/TreeMapDemo.java)
+
+- **The Collection Classes**
+    - [AbstractCollection](https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html#add(E))
+        - This class provides a skeletal implementation of the Collection interface, to minimize the effort required to implement this interface.
+    - [AbstractList](https://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html)
+        - Extends AbstractCollection and implements most of the List interface.
+    - [AbstractSequentialList](https://docs.oracle.com/javase/7/docs/api/java/util/AbstractSequentialList.html)
+        - Extends AbstractList for use by a collection that uses sequential rather than random access of its elements.
+    - [LinkedList](https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html)
+        - Implements a linked list by extending AbstractSequentialList.  [Sample code](Collection/LinkedListDemo.java)
+    - [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+        - Implements a dynamic array by extending AbstractList. [Sample Code](Collection/ArrayListDemo.java)
+    - [AbstractSet](https://docs.oracle.com/javase/7/docs/api/java/util/AbstractSet.html)
+        - Extends AbstractCollection and implements most of the Set interface.
+    - [HashSet](https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html)
+        - Extends AbstractSet for use with a hash table.
+    - [LinkedHashSet](https://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashSet.html)
+        - Extends HashSet to allow insertion-order iterations.
+        - LinkedHashSet maintains a linked list of the entries in the set, in the order in which they were inserted. [Sample Code](Collection/HashSetDemo.java)
+    - [TreeSet](https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html)
+        - Implements a set stored in a tree. Extends AbstractSet.
+        - This implementation provides guaranteed log(n) time cost for the basic operations (add, remove and contains). [Sample Code](Collection/TreeSetDemo.java)
+    - [AbstractMap](https://docs.oracle.com/javase/7/docs/api/java/util/AbstractMap.html)
+        - Implements most of the Map interface. Extended from Object.
+    - [HashMap](https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html)
+        - Extends AbstractMap to use a hash table. [Sample Code](Collection/HashMapDemo.java)
+    - [TreeMap](https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html)
+        - A Red-Black tree based NavigableMap implementation. Extends AbstractMap. [Sample Code](Collection/TreeMapDemo.java)
+    - [WeakHashMap](https://docs.oracle.com/javase/7/docs/api/java/util/WeakHashMap.html)
+        - Extends from Map interface, stores only weak references to its keys. It allows a key-value pair to be garbage-collected when its key is no longer referenced outside of the WeakHashMap. [Sample code](Collection/WeakHashMap_Demo.java)
+    - [LinkedHashMap](https://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashMap.html)
+        - Extends HashMap to allow insertion-order iterations. [Sample Code](Collection/LinkedHashMapDemo.java)
+    - [IdentityHashMap](https://docs.oracle.com/javase/7/docs/api/java/util/IdentityHashMap.html)
+        - Extends AbstractMap and uses reference equality when comparing documents.[Sample Code(Collection/IdentityHashMapDemo.java)
+    - [Vector](https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html)
+        - Extends from AbstractList, implements Collection Interfaces. It is similar to ArrayList, but it is synchronized and has some different methods. [Sample code](Collection/VectorDemo.java)
+    - [Stack](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)
+        - Stack is a subclass of Vector that implements a standard last-in, first-out stack. [Sample code](Collection/StackDemo.java)
+    - [Dictionary](https://docs.oracle.com/javase/7/docs/api/java/util/Dictionary.html)
+        - This class is obsolete. New implementations should implement the Map interface. **Not in Collection framework**
+    - [Hashtable](https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html)
+        - extends from Dictionary but also implements Map interfaces. It is similar to HashMap, but is synchronized. [Sample code](Collection/HashTableDemo.java)
+    - [Properties](https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html)
+        - Properties is a subclass of Hashtable. Both key and value are String.[Sample Code](Collection/PropDemo.java)
+    - [BitSet](https://docs.oracle.com/javase/7/docs/api/java/util/BitSet.html)
+        - Extend Object. Not in Collection framework
+        - The BitSet class creates a special type of array that holds bit values. [Sample Code](Collection/BitSetDemo.java)
+        - Support mathematical set operations likes OR, AND, XOR etc.
+
+
+
+
+
+
 
 ### Multithreading
 - [**volatile keyword in Java**](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
