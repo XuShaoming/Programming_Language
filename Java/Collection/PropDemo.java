@@ -28,3 +28,14 @@ public class PropDemo {
       System.out.println("The capital of Florida is " + str + ".");
    }
 }
+
+/**
+xu-Macbook:Collection xushaoming$ java PropDemo
+The capital of Indiana is Indianapolis.
+The capital of Illinois is Springfield.
+The capital of Missouri is Jefferson City.
+The capital of California is Sacramento.
+The capital of Washington is Olympia.
+
+The capital of Florida is Not Found.
+*/

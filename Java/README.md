@@ -131,18 +131,6 @@ This repository includes the examples from the [Java Quick Guide](https://www.tu
 - [**strictfp keyword**](https://www.geeksforgeeks.org/strictfp-keyword-java/)
   - strictfp is a keyword in java used for restricting floating-point calculations and ensuring same result on every platform while performing operations in the floating-point variable. [Code](Basic/StrictfpExp.java)
 
-- [**Serialization and Deserialization**](https://www.geeksforgeeks.org/serialization-in-java/)
-  - Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory.
-  - Usage:
-    - To save/persist state of an object.
-    - To travel an object across a network.
-  - Static data members and transient data members are not saved via Serialization process. See the [Code](Basic/SerializationExp.java):
-  ```java
-  transient int a;
-  static int b;
-  ```
-  These two variables not saved via Serialization process.
-
 ### Access control
 - **Package**
   - Detail see **\<Thinking in Java Access\>** Chapter Access Control. See [examples](AccessControl/Package) and [Java Quick Guide](https://www.tutorialspoint.com/java/java_quick_guide).
@@ -510,11 +498,102 @@ Object o = d;
         - The BitSet class creates a special type of array that holds bit values. [Sample Code](Collection/BitSetDemo.java)
         - Support mathematical set operations likes OR, AND, XOR etc.
 
+- [Collection Algorithms](https://www.tutorialspoint.com/java/java_collection_algorithms.htm)
+    - [Official sources](https://docs.oracle.com/javase/8/docs/api/?java/util/Collections.html)
+    -  These algorithms are defined as static methods within the Collections class. Not in AbstractCollection! Like List and Sets etc collections are defined under AbstractCollection. [Sample Code](Collection/AlgorithmsDemo.java)
+    - Several of the methods can throw:
+        - ClassCastException: occurs when an attempt is made to compare incompatible types
+        - UnsupportedOperationException: occurs when an attempt is made to modify an unmodifiable collection.
+- [Using Java Iterator](https://www.tutorialspoint.com/java/java_using_iterator.htm)
+    - Iterator enables you to cycle through a collection, obtaining or removing elements. ListIterator extends Iterator to allow bidirectional traversal of a list, and the modification of elements. [Sample Code](https://www.tutorialspoint.com/java/java_collection_algorithms.htm)
+- [Using Java Comparator](https://www.geeksforgeeks.org/comparator-interface-java/)
+    - Comparator interface helps to define precisely what sorted order means. It has two methods:
+        - The compare Method
+            ```java
+            /**
+            0 : obj1 == obj2
+            postive : obj1 > obj2
+            negative: obj1 < obj2
+            **/
+            int compare(Object obj1, Object obj2)
+            ```
+        - The equals Method
+        ```java
+        /**
+        true:  rue only if the specified object is also a comparator and it imposes the same ordering as this comparator
+        */
+        boolean equals(Object obj)
+        ```
+    - Normal use [Sample Code](Collection/ComparatorExample.java)
+    - Sort collection by more than one field [Sample Code](Collection/Student.java)
+        - Define inner static Comparator class is good to be used.
+- [Comparable vs Comparator in Java](https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/)
+    - A comparable object is capable of comparing itself with another object. [Sample Code](Collection/ComparableExample.java)
+        ```java
+        Collections.sort(list);
+        ```
+    - Unlike Comparable, Comparator is external to the element type we are comparing. It’s a separate class. We create multiple separate classes (that implement Comparator) to compare by different members.
+        ```java
+        Collections.sort(al, new CustomerSortingComparator());
+        ```
+- The classes and interfaces of the collections framework are in package java.util.
 
+### Generics
+- Detail from https://www.geeksforgeeks.org/generics-in-java/
+- Generics allow type (Integer, String, … etc and user defined types) to be a parameter to methods, classes and interfaces.
+- Advantages:
+    - Code Reuse.
+    - Type Safety : Generics make errors to appear compile time than at run time
+    - Individual Type Casting is not needed
+    - Implementing generic algorithms
+- **Generic Methods**
+    - a single generic method declaration that can be called with arguments of different types. [Sample Code](Generic/GenericMethodTest.java)
+- **Bounded Type Parameters**
+    - helps to restrict the kinds of types that are allowed to be passed to a type parameter.
+    - Following example illustrates how extends is used in a general sense to mean either "extends" (as in classes) or "implements" (as in interfaces). [Sample code](Generic/MaximumTest.java)
+        - Notice, Comparable is an interface.
+- **Generic Classes**
+    - syntax
+    ```java
+        // To create an instance of generic class
+        BaseType <Type> obj = new BaseType <Type>();
+        //Note: In Parameter type we can not use primitives like
+        //'int','char' or 'double'.
+    ```
+    - As with generic methods, the type parameter section of a generic class can have one or more type parameters separated by commas. [Sample Code](Generic/Box.java)
 
-
-
-
+### Serialization
+- [**Serialization and Deserialization**](https://www.geeksforgeeks.org/serialization-in-java/)
+  - Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory.
+  - Usage:
+    - To save/persist state of an object.
+    - To travel an object across a network.
+  - Static data members and transient data members are not saved via Serialization process. See the [Code](Basic/SerializationExp.java):
+  ```java
+  transient int a;
+  static int b;
+  ```
+  These two variables not saved via Serialization process.
+### Networking
+- The term network programming refers to writing programs that execute across multiple devices (computers), in which the devices are all connected to each other using a network.
+- The java.net package provides support for the two common network protocols
+    - TCP
+    - UDP
+- **Socket Programming**
+    - he following steps occur when establishing a TCP connection between two computers using sockets
+        - The server instantiates a ServerSocket object, denoting which port number communication is to occur on.
+        - The server invokes the accept() method of the ServerSocket class. This method waits until a client connects to the server on the given port.
+        - After the server is waiting, a client instantiates a Socket object, specifying the server name and the port number to connect to.
+        - The constructor of the Socket class attempts to connect the client to the specified server and the port number. If communication is established, the client now has a Socket object capable of communicating with the server.
+        - On the server side, the accept() method returns a reference to a new socket on the server that is connected to the client's socket.
+    - **java.net.ServerSocket** class is used by server applications to obtain a port and listen for client requests.
+    - **java.net.ServerSocket** class represents the socket that both the client and the server use to communicate with each other.
+    - **java.net.InetAddress class** represents an Internet Protocol (IP) address.
+    - [Sample Codes](Networking)
+- **URL Processing**
+    - The **java.net.URL** class represents a URL and has a complete set of methods to manipulate URL in Java.
+    - The openConnection() method returns a **java.net.URLConnection**, an abstract class whose subclasses represent the various types of URL connections.
+    - [Sample code](Networking/URLDemo.java)
 
 ### Multithreading
 - [**volatile keyword in Java**](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
