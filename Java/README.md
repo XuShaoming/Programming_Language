@@ -596,10 +596,79 @@ Object o = d;
     - [Sample code](Networking/URLDemo.java)
 
 ### Multithreading
+- https://www.tutorialspoint.com/java/java_multithreading.htm
+- By definition, multitasking is when multiple processes share common processing resources such as a CPU. Multi-threading extends the idea of multitasking into applications where you can subdivide specific operations within a single application into individual threads. The OS divides processing time not only among different applications, but also among each thread within an application.
+- **Life Cycle of a Thread**
+    - **New** − A new thread begins its life cycle in the new state. It remains in this state until the program starts the thread. It is also referred to as a born thread.
+    - **Runnable** − After a newly born thread is started, the thread becomes runnable. A thread in this state is considered to be executing its task.
+    - **Waiting** − Sometimes, a thread transitions to the waiting state while the thread waits for another thread to perform a task. A thread transitions back to the runnable state only when another thread signals the waiting thread to continue executing.
+    - **Timed Waiting** − A runnable thread can enter the timed waiting state for a specified interval of time. A thread in this state transitions back to the runnable state when that time interval expires or when the event it is waiting for occurs.
+    - **Terminated (Dead)** − A runnable thread enters the terminated state when it completes its task or otherwise terminates.
+- **Thread Priorities**
+    - Java thread priorities are in the range between MIN_PRIORITY (a constant of 1) and MAX_PRIORITY (a constant of 10). By default, every thread is given priority NORM_PRIORITY (a constant of 5).
+- **Create a Thread by Implementing a [Runnable Interface](https://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html)**
+    - In most cases, the Runnable interface should be used if you are only planning to override the run() method and no other Thread methods. This is important because classes should not be subclassed unless the programmer intends on modifying or enhancing the fundamental behavior of the class.
+    - Step 1: implement a run() method provided by a Runnable interface. This method provides an entry point for the thread and you will put your complete business logic inside this method.
+        ```java
+        public void run( )
+        ```
+    - Step 2: you will instantiate a Thread object using the following constructor.
+        ```java
+        /**
+        threadObj : an instance of a class that implements the Runnable interface
+        threadName:  the name given to the new thread
+        */
+        Thread(Runnable threadObj, String threadName);
+        ```
+    - Step 3: you can start it by calling start() method, which executes a call to run() method
+        ```java
+        void start();
+        ```
+    - [Sample Code](Multithreading/TestThread)
+- **Create a Thread by Extending a Thread Class**
+    - [Thread Class](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html) defined in java.lang.Thread. It also implement Runnable interface.
+    - Step 1: override run() method available in Thread class
+    - Step 2: Once Thread object is created, you can start it by calling start() method
+    - [Sample code](Multithreading/TestThread2.java)
+- **Thread Methods**
+    - JVM does not wait for Daemon thread before exiting while it waits for user threads. [Sample Code](Multithreading/ThreadMethods)
+    - Understand [join( )](https://www.geeksforgeeks.org/joining-threads-in-java/). [Sample Code](Multithreading/JoinExp.java)
+- [**Daemon thread**](https://beginnersbook.com/2015/01/daemon-thread-in-java-with-example/)
+    - Daemon thread is a low priority thread (in context of JVM) that runs in background to perform tasks such as garbage collection (gc) etc., they do not prevent the JVM from exiting (even if the daemon thread itself is running) when all the user threads (non-daemon threads) finish their execution. [Sample Code](Multithreading/DaemonThreadExample1.java)
+- Major Java Multithreading Concepts
+    - [Thread Synchronization](https://www.tutorialspoint.com/java/java_thread_synchronization.htm)
+        - Java create threads and synchronize their task by using synchronized blocks. You keep shared resources within this block.
+        ```java
+        synchronized(objectidentifier) {
+            //objectidentifier : a reference to an object whose lock associates with the monitor that the synchronized statement represents.
+           // Access shared variables and other shared resources
+        }
+        ```
+        - [Sample Codes](Multithreading/ThreadSynchronization)
+        - From [GeeksforGeek](shttps://www.geeksforgeeks.org/synchronized-in-java/)
+            - All synchronized blocks synchronized on the same object can only have one thread executing inside them at a time. All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block. [Code](Multithreading/SyncDemo.java).
+            - This synchronization is implemented in Java with a concept called monitors. I have learned this in OS course. See it [here](https://github.com/XuShaoming/UB_COURSES/blob/master/Operating%20System/Lecture_09__Process_Synchronization__II.pdf).
+    - [Interthread Communication](https://www.tutorialspoint.com/java/java_thread_communication.htm)
+        - Enable two or more threads exchange some information. [Sample Code](Multithreading/ThreadSynchronization/InterthreadCommunication.java)
+    - [**Thread Deadlock**](https://www.tutorialspoint.com/java/java_thread_deadlock.htm)
+        - Deadlock occurs when multiple threads need the same locks but obtain them in different order. [A Dead Lock](Multithreading/ThreadSynchronization/DeadLockExp.java)
+        - Deadlock Solution See [1](https://github.com/XuShaoming/UB_COURSES/blob/master/Operating%20System/Lecture_10__Deadlocks__I.pdf), [2](https://github.com/XuShaoming/UB_COURSES/blob/master/Operating%20System/Lecture_11__Deadlocks__II.pdf).
+            - [Sample Code](Multithreading/ThreadSynchronization/SolvDeadLockExp.java) solve deadlock by change order.
+    - [**Thread Control**](https://www.tutorialspoint.com/java/java_thread_control.htm)
+        - [Sample Code](Multithreading/ThreadSynchronization/ThreadControl.java)
 - [**volatile keyword in Java**](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
   - **Mutual Exclusion**: It means that only one thread or process can execute a block of code (critical section) at a time.
   - **Visibility**: It means that changes made by one thread to shared data are visible to other threads.
   - Volatile variables have the visibility features of synchronized but not the atomicity features. The values of volatile variable will never be cached and all writes and reads will be done to and from the main memory.
-- [**Synchronized in Java**](https://www.geeksforgeeks.org/synchronized-in-java/)
-  - All synchronized blocks synchronized on the same object can only have one thread executing inside them at a time. All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block. [Code](Multithreading/SyncDemo.java).
-  - This synchronization is implemented in Java with a concept called monitors. I have learned this in OS course. See it [here](https://github.com/XuShaoming/UB_COURSES/blob/master/Operating%20System/Lecture_09__Process_Synchronization__II.pdf).
+
+### Documentation Comments
+- three types of comments:
+    - /* text */
+        - The compiler ignores everything from /* to */.
+    - //text
+        - The compiler ignores everything from // to the end of the line.
+    - /** documentation */
+        - This is a documentation comment. The JDK javadoc tool uses doc comments when preparing automatically generated documentation.
+- Javadoc
+    - Javadoc is a tool which comes with JDK and it is used for generating Java code documentation in HTML format from Java source code, which requires documentation in a predefined format.
+    - [Sample Code](Basic/AddNum.java)
