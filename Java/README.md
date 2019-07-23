@@ -672,3 +672,4 @@ Object o = d;
 - Javadoc
     - Javadoc is a tool which comes with JDK and it is used for generating Java code documentation in HTML format from Java source code, which requires documentation in a predefined format.
     - [Sample Code](Basic/AddNum.java)
+- [@Override](https://stackoverflow.com/questions/561365/what-is-override-for-in-java/561391) purpose.
