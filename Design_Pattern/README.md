@@ -57,11 +57,11 @@ This repository includes the examples from the [Design Pattern Quick Guide](http
 ### Adapter Pattern
 - Adapter pattern works as a bridge between two incompatible interfaces. It is under structural pattern.
 - Implementation ：an audio player device can play mp3 files only and wants to use an advanced audio player capable of playing vlc and mp4 files.
-    - [Adapter Pattern Example](AdapterPattern)
-    <br>![Adapter Pattern Example](images/adapter_pattern_uml_diagram.jpg	 "Adapter Pattern Example")
+    - [Adapter Pattern Example](AdapterPattern)
+    <br> ![Adapter Pattern Example](images/adapter_pattern_uml_diagram.jpg	 "Adapter Pattern Example")
 
 ### Bridge Pattern
-- Bridge Pattern is used where we need to decouple an abstraction from its implementation so that the two can vary independently. It is under structural pattern.
+- Bridge Pattern is used where we need to decouple an abstraction from its implementation so that the two can vary independently. It is under structural pattern.
 - This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes. Both types of classes can be altered structurally without affecting each other.
 - Implementation
     - [Bridge Pattern Example](BridgePattern)
@@ -78,3 +78,58 @@ This repository includes the examples from the [Design Pattern Quick Guide](http
 - Implementation
     - [Composite Pattern Example](CompositePattern)
     <br>![Composite Pattern Example](images/composite_pattern_uml_diagram.jpg "Composite Pattern Example")
+
+### Decorator Pattern
+- Decorator pattern allows to add new functionality an existing object without altering its structure. This type of design pattern comes under structural pattern as this pattern acts as a wrapper to existing class.
+- This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.
+- Implementation
+    - [Decorator Pattern Example](DecoratorPattern)
+    <br>![Composite Pattern Example](images/decorator_pattern_uml_diagram.jpg "Decorator Pattern Example")
+
+### Facade Pattern
+- Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to exiting system to hide its complexities.
+- This pattern involves a single class which provides simplified methods which are required by client and delegates calls to existing system classes methods.
+- Implementation
+ - [Facade Pattern Example](FacadePattern)
+ <br>![Facade Pattern Example](images/facade_pattern_uml_diagram.jpg "Facade Pattern Example")
+
+### Flyweight Pattern
+ - Flyweight pattern is primarily used to reduce the number of objects created, to decrease memory footprint and increase performance. This type of design pattern comes under structural pattern as this pattern provides ways to decrease objects count thus improving application required objects structure.
+ - Flyweight pattern try to reuse already existing similar kind objects by storing them and creates new object when no matching object is found. We'll demonstrate this pattern by drawing 20 circle of different locations but we'll creating only 5 objects.
+ - Implementation
+  - [Flyweight Pattern Example](FlyweightPattern)
+  <br>![Flyweight Pattern Example](images/flyweight_pattern_uml_diagram.jpg "Flyweight Pattern Example")
+
+### Proxy Pattern
+- In Proxy pattern, a class represents functionality of another class. In Proxy pattern, we create object having original object to interface its functionality to outer world.
+- Implementation
+ - [Proxy Pattern Example](ProxyPattern)
+ <br>![Proxy Pattern Example](images/proxy_pattern_uml_diagram.jpg "Proxy Pattern Example")
+
+<br> <br>
+## Behavioral Patterns
+
+### Chain of Responsibility Pattern
+- As the name suggest, the chain of responsibility pattern creates a chain of receiver objects for a request. This pattern decouples sender and receiver of a request based on type of request.
+- In this pattern, normally each receiver contains reference to another receiver. If one object cannot handle the request then it passes the same to the next receiver and so on.
+- Implementation
+ - [Chain of Responsibility Pattern Example](ChainOfResponsibilityPattern)
+ <br>![Chain of Responsibility Pattern Example](images/chain_pattern_uml_diagram.jpg "Chain of Responsibility Pattern Example")
+
+### Command Pattern
+- Command pattern is a data driven design pattern and falls under behavioral pattern category. A request is wrapped under a object as command and passed to invoker object. Invoker object looks for the appropriate object which can handle this command and pass the command to the corresponding object and that object executes the command.
+- Implementation
+ - [Command Pattern Example](CommandPattern)
+ <br>![Command Pattern Example](images/command_pattern_uml_diagram.jpg "Command Pattern Example")
+
+### Interpreter Pattern
+- Interpreter pattern provides way to evaluate language grammar or expression. This type of pattern comes under behavioral patterns. This pattern involves implementing a expression interface which tells to interpret a particular context. This pattern is used in SQL parsing, symbol processing engine etc.
+- Implementation
+    - [Interpreter Pattern Example](InterpreterPattern)
+    <br>![Interpreter Pattern Example](images/interpreter_pattern_uml_diagram.jpg "Interpreter Pattern Example")
+
+### Iterator Pattern
+-  This pattern is used to get a way to access the elements of a collection object in sequential manner without any need to know its underlying representation. It is under behavioral pattern category.
+- Java has [Iterator Interface](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html).
+- [Iterator Pattern Example](IteratorPattern)
+<br>![Iterator Pattern Example](images/iterator_pattern_uml_diagram.jpg "Iterator Pattern Example")
