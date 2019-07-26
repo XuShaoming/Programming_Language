@@ -536,6 +536,17 @@ Object o = d;
         ```java
         Collections.sort(al, new CustomerSortingComparator());
         ```
+- [Iterator and Iterable Interface in Java](https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/)
+    - Every class that implements Iterable interface can be used in for-each loop. It is needed when to design custom data structure.
+    - To implement an iterable data structure, we need to:
+        - Implement Iterable interface along with its methods in the said Data Structure
+        - Create an Iterator class which implements Iterator interface and corresponding methods.
+        ```java
+            for(Item item: customDataStructure) { /*do stuff*/ }
+        ```
+        - The Iterator class can also, be implemented as an inner class of the Data Structure class since it won’t be used elsewhere.
+        - [Sample Code](Collection/IteratorExp.java)
+
 - The classes and interfaces of the collections framework are in package java.util.
 
 ### Generics
